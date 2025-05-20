@@ -81,16 +81,16 @@
 <span class="sd">Please be aware that you can define multiple events and add them to the FastAPI</span>
 <span class="sd">instance, and the adding order decides the executing order.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">..configs</span> <span class="kn">import</span> <span class="n">get_settings</span>
-<span class="kn">from</span> <span class="nn">..db.init_db</span> <span class="kn">import</span> <span class="n">flash_contents</span>
-<span class="kn">from</span> <span class="nn">..db</span> <span class="kn">import</span> <span class="n">Base</span><span class="p">,</span> <span class="n">engine</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..configs</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_settings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..db.init_db</span><span class="w"> </span><span class="kn">import</span> <span class="n">flash_contents</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Base</span><span class="p">,</span> <span class="n">engine</span>
 
 <span class="n">settings</span> <span class="o">=</span> <span class="n">get_settings</span><span class="p">()</span>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">PROJECT_SLUG</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="startup_db_handler"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.events.subfeddit.startup_db_handler">[docs]</a><span class="k">async</span> <span class="k">def</span> <span class="nf">startup_db_handler</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="startup_db_handler"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.events.subfeddit.startup_db_handler">[docs]</a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">startup_db_handler</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;startup event, it will be executed before the app is ready to create</span>
 <span class="sd">    tables in DB and flash contents to DB.&quot;&quot;&quot;</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Creating all tables in DB ...&quot;</span><span class="p">)</span>
@@ -99,7 +99,7 @@
     <span class="n">flash_contents</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="shutdown_db_handler"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.events.subfeddit.shutdown_db_handler">[docs]</a><span class="k">async</span> <span class="k">def</span> <span class="nf">shutdown_db_handler</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="shutdown_db_handler"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.events.subfeddit.shutdown_db_handler">[docs]</a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">shutdown_db_handler</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;shutdown event, it will be executed before the app is shutting</span>
 <span class="sd">    down to clean the DB.&quot;&quot;&quot;</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Dropping all tables in DB ...&quot;</span><span class="p">)</span>
@@ -113,7 +113,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Zhiwei Zhang.</p>
+    <p>&#169; Copyright 2025, Zhiwei Zhang.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

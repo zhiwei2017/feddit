@@ -76,11 +76,11 @@
            <div itemprop="articleBody">
              
   <h1>Source code for feddit.app.api.subfeddit</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
-<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">HTTPException</span>
-<span class="kn">from</span> <span class="nn">..db.session</span> <span class="kn">import</span> <span class="n">session_scope</span>
-<span class="kn">from</span> <span class="nn">..db.models.subfeddit</span> <span class="kn">import</span> <span class="n">Subfeddit</span><span class="p">,</span> <span class="n">Comment</span>
-<span class="kn">from</span> <span class="nn">..schemas.subfeddit</span> <span class="kn">import</span> <span class="p">(</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..db.session</span><span class="w"> </span><span class="kn">import</span> <span class="n">session_scope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..db.models.subfeddit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Subfeddit</span><span class="p">,</span> <span class="n">Comment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..schemas.subfeddit</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">SubfedditResponse</span><span class="p">,</span> <span class="n">SubfedditsResponse</span><span class="p">,</span> <span class="n">CommentsResponse</span>
 <span class="p">)</span>
 
@@ -91,7 +91,7 @@
                       <span class="n">response_description</span><span class="o">=</span><span class="s2">&quot;A json response containing brief&quot;</span>
                                            <span class="s2">&quot; information of extracted &quot;</span>
                                            <span class="s2">&quot;subfeddits.&quot;</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">get_subfeddits</span><span class="p">(</span><span class="n">skip</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubfedditsResponse</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_subfeddits</span><span class="p">(</span><span class="n">skip</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubfedditsResponse</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get brief information of max `limit` number of subfeddits with skipping</span>
 <span class="sd">    `skip` number of subfeddits .</span>
 
@@ -114,7 +114,7 @@
                       <span class="n">response_description</span><span class="o">=</span><span class="s2">&quot;A json response containing detailed&quot;</span>
                                            <span class="s2">&quot; information of the subfeddit with&quot;</span>
                                            <span class="s2">&quot; given `subfeddit_id`.&quot;</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">get_subfeddit_info</span><span class="p">(</span><span class="n">subfeddit_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubfedditResponse</span><span class="p">:</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_subfeddit_info</span><span class="p">(</span><span class="n">subfeddit_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubfedditResponse</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get detailed information of the subfeddit with given `subfeddit_id`.</span>
 
 <span class="sd">    \f</span>
@@ -144,7 +144,7 @@
                       <span class="n">response_description</span><span class="o">=</span><span class="s2">&quot;A json response containing comments&quot;</span>
                                            <span class="s2">&quot; information of the desired&quot;</span>
                                            <span class="s2">&quot; subfeddit.&quot;</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">get_subfeddit_comments</span><span class="p">(</span><span class="n">subfeddit_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">skip</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_subfeddit_comments</span><span class="p">(</span><span class="n">subfeddit_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">skip</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                  <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CommentsResponse</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide version information about the web service.</span>
 
@@ -173,7 +173,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Zhiwei Zhang.</p>
+    <p>&#169; Copyright 2025, Zhiwei Zhang.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

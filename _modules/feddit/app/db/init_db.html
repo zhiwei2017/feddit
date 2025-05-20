@@ -76,12 +76,12 @@
            <div itemprop="articleBody">
              
   <h1>Source code for feddit.app.db.init_db</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
-<span class="kn">from</span> <span class="nn">.session</span> <span class="kn">import</span> <span class="n">session_scope</span>
-<span class="kn">from</span> <span class="nn">.models.subfeddit</span> <span class="kn">import</span> <span class="n">Subfeddit</span><span class="p">,</span> <span class="n">Comment</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.session</span><span class="w"> </span><span class="kn">import</span> <span class="n">session_scope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models.subfeddit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Subfeddit</span><span class="p">,</span> <span class="n">Comment</span>
 
 
 <span class="n">positive_sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;It looks great!&quot;</span><span class="p">,</span> <span class="s2">&quot;Love it.&quot;</span><span class="p">,</span> <span class="s2">&quot;Awesome.&quot;</span><span class="p">,</span> <span class="s2">&quot;Well done!&quot;</span><span class="p">,</span>
@@ -95,7 +95,7 @@
 <span class="n">subfeddits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dummy Topic 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Dummy Topic 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Dummy Topic 3&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="generate_comment_texts"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.db.init_db.generate_comment_texts">[docs]</a><span class="k">def</span> <span class="nf">generate_comment_texts</span><span class="p">(</span><span class="n">sentences</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="generate_comment_texts"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.db.init_db.generate_comment_texts">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">generate_comment_texts</span><span class="p">(</span><span class="n">sentences</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate comment texts with given sentences.</span>
 
 <span class="sd">    The logic of this function is to combine the single sentence to each other</span>
@@ -115,7 +115,7 @@
     <span class="k">return</span> <span class="n">comment_texts</span></div>
 
 
-<div class="viewcode-block" id="flash_contents"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.db.init_db.flash_contents">[docs]</a><span class="k">def</span> <span class="nf">flash_contents</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="flash_contents"><a class="viewcode-back" href="../../../../03_source.html#feddit.app.db.init_db.flash_contents">[docs]</a><span class="k">def</span><span class="w"> </span><span class="nf">flash_contents</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Flash contents to DB.&quot;&quot;&quot;</span>
     <span class="n">comment_texts</span> <span class="o">=</span> <span class="n">generate_comment_texts</span><span class="p">(</span><span class="n">positive_sentences</span><span class="p">)</span>
     <span class="n">comment_texts</span> <span class="o">+=</span> <span class="n">generate_comment_texts</span><span class="p">(</span><span class="n">negative_sentences</span><span class="p">)</span>
@@ -138,7 +138,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Zhiwei Zhang.</p>
+    <p>&#169; Copyright 2025, Zhiwei Zhang.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
